@@ -41,6 +41,10 @@ export class TitleBar extends WebComponent {
                 text-overflow: ellipsis;
                 font-size: 12px;
                 cursor: default;
+                margin: 0 auto;
+            }
+            :host-context(.mac) .title-bar .windows-controls {
+                display: none;
             }
             .title-bar .windows-controls {
                 position: absolute;

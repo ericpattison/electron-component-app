@@ -18,7 +18,15 @@ export interface IWindow {
 
 export class Window extends BrowserWindow implements IWindow {
     constructor(file: string, settings: IWindowSettings) {
-        super({...defaultSettings, ...settings, frame: false, webPreferences: {nodeIntegration: true}});
+        super({
+            ...defaultSettings,
+            ...settings,
+            frame: false,
+            titleBarStyle: "hidden",
+            webPreferences: {
+                nodeIntegration: true,
+            },
+        });
         this.loadFile(file);
 
         this.once("ready-to-show", () => {
